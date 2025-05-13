@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% if result %}
+                <div class="result">
+                    <h4>🩺 Predicted Disease: <strong>{{ result.disease }}</strong></h4>
+                    <p><strong>Description:</strong><br> {{ result.description }}</p>
+                    <p><strong>Precautions:</strong></p>
+                    <ul>
+                        {% for p in result.precautions %}
+                            <li>{{ p }}</li>
+                        {% endfor %}
+                    </ul>
+                    <p><strong>Recommended Doctor(s) in {{ result.level }} ({{ result.region }}):</strong></p>
+                    <ul>
+                        {% for d in result.doctors %}
+                            <li>
+                                👨‍⚕️ <strong>{{ d.name }}</strong> – {{ d.specialist }} <br>
+                                📍 Location: {{ d.city }}, {{ d.state }} <br>
+                                📞 Phone: {{ d.phone }} <br>
+                                ⭐ Rating: {{ d.rating }}/10
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+        </body>
+            </html>

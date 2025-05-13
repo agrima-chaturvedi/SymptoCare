@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background: url('/static/yes.webp') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 0;
+  }
+  
+  .login-box {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.15); 
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .login-box h2 {
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .login-box p {
+    margin-bottom: 25px;
+    color: #ddd;
+  }
+  
+  .input-group {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    color: #eee;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+  }
+  
+  .input-group input::placeholder {
+    color: #f0f0f0;
+  }
+  
+  .options {
+    text-align: right;
+    margin-bottom: 15px;
+  }
+  
+  .forgot {
+    font-size: 13px;
+    color: #ffd700;
+    text-decoration: none;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .login-btn:hover {
+    background: #2980b9;
+  }
+  
+  .or {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #eee;
+  }
+  
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .google,
+  .facebook {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .google {
+    background: #db4437;
+    color: white;
+  }
+  
+  .facebook {
+    background: #3b5998;
+    color: white;
+  }
+  
+  .signup {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .signup a {
+    color: #ffd700;
+    text-decoration: none;
+  }
+  

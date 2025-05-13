@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="overlay">
+        <div class="welcome">
+            <h1>Welcome to the Disease Prediction System 🧠</h1>
+            <p>Enter your symptoms and location to get a prediction and recommended doctor.</p>
+        </div>
+        <div class="container">
+            <h2>🔍 Prediction Form</h2>
+            <form method="POST" action="/predict">
+                {% for i in range(1, 9) %}
+                    <label for="S{{ i }}">Symptom {{ i }}:</label>
+                    <input type="text" name="S{{ i }}" required>
+                {% endfor %}
+
+                <label for="City">City:</label>
+                <input type="text" name="City" required>
+
+                <label for="State">State:</label>
+                <input type="text" name="State" required>
+
+                <input type="submit" value="Predict Disease">
+            </form>
+
+            
+    </div>
+</body>
+</html>

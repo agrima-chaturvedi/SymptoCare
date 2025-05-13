@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+  <div class="login-box" id="form-container">
+    <form id="login-form" method="POST" action="{{ url_for('login') }}">
+      <h2>Welcome</h2>
+      <p>Login to your Account</p>
+
+      <div class="input-group">
+        <label for="identifier">Email / Phone / Username</label>
+        <input type="text" id="identifier" name="identifier" placeholder="Enter your username" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required />
+      </div>
+
+      <div class="options">
+        <a href="#" class="forgot">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+
+      <p class="signup">New here? <a href="#" onclick="showSignup()">Create an account</a></p>
+    </form>
+
+    <form id="signup-form" style="display: none" action="{{ url_for('signup') }}" method="POST">
+      <h2>Create Account</h2>
+      <p>Enter your personal details</p>
+
+      <div class="input-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      </div>
+      <div class="input-group">
+        <label for="patient_name">Choose Username</label>
+        <input type="text" id="patient_name" name="patient_name" placeholder="Create a patient_name" required />
+      </div>
+
+      <div class="input-group">
+        <label for="new-password">Create Password</label>
+        <input type="password" id="new-password" name="new-password" placeholder="Create a password" required />
+      </div>
+
+      <button type="submit" class="login-btn">Sign Up</button>
+
+      <p class="signup">Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </form>
+  </div>
+  <script>
+    function showSignup() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('signup-form').style.display = 'block';
+    }
+
+    function showLogin() {
+      document.getElementById('signup-form').style.display = 'none';
+      document.getElementById('login-form').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

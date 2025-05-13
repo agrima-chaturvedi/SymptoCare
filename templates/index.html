@@ -2,13 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Disease Prediction System</title>
+    <title>Symptocare</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .logout a {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .logout a:hover {
+            color: #ff4d4d;
+        }
+    </style>
 </head>
 <body>
+    <!-- Logout icon -->
+    <div class="logout">
+        <a href="{{ url_for('login') }}" title="Logout">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+    </div>
+
     <div class="overlay">
         <div class="welcome">
-            <h1>Welcome to the Disease Prediction System 🧠</h1>
+            <h1>Welcome to Symptocare 🧠</h1>
             <p>Enter your symptoms and location to get a prediction and recommended doctor.</p>
         </div>
         <div class="container">
@@ -27,8 +52,7 @@
 
                 <input type="submit" value="Predict Disease">
             </form>
-
-            
+        </div>
     </div>
 </body>
 </html>
